@@ -6,15 +6,17 @@
         xmlns:local="clr-namespace:Stroy.Stranichki"
         mc:Ignorable="d"
         Icon="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\Chernovik.ico"
-        Title="Окно редактирования" Height="400" Width="300">
+        Title="Окно редактирования" Height="500" Width="320">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <Image Margin="5" Source="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\picture.png" Height="30" Width="80"/>
-                <Button Margin="0,5,0,0" Content="Изменить фото"/>
+                <Image Name="Image" Margin="5" Source="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\picture.png" Height="30" Width="80"/>
+                <Button Margin="0,5,0,0" Content="Изменить фото" Width="100" Click="Button_Click"/>
                 <TextBlock Text="Поставщик" Margin="5,0,0,0"/>
                 <ComboBox Name="CBPost" Margin="5"/>
                 <ListBox Name="LBTitle" Width="100" Height="60"/>
+                <Button Content="Изменить запись" Name="BRedakt" Width="100" Margin="5" Click="BRedakt_Click"/>
+                <Button Name="BDel" Content="Удалить запись" Width="100" Click="BDel_Click"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <TextBlock Text="Наименование:" Margin="50,0,0,0"/>
@@ -33,8 +35,8 @@
                 <TextBox Name="TBStoimost" Width="120"/>
                 <TextBlock Text="Описание" Margin="70,0,0,0"/>
                 <TextBox Height="60" Width="170"/>
-                <Button Content="Изменить запись" Name="BRedakt" Width="120" Margin="5" Click="BRedakt_Click"/>
-                <Button Name="BDel" Content="Удалить запись" Width="120" Click="BDel_Click"/>
+                <Button Name="BDobav" Height="30" Width="120" Margin="10" Content="Добавить" Click="BDobav_Click"/>
+                <Button Name="BRemove" Height="30" Width="120" Content="Удалить"/>
             </StackPanel>
         </StackPanel>
     </Grid>
