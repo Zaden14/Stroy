@@ -1,0 +1,73 @@
+﻿<Page x:Class="Stroy.Stranichki.AdminList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stroy.Stranichki"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Изменения">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel   Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <StackPanel>
+                <TextBlock FontSize="17" Margin="5,0"  Width="250" Text="Введите данные для поиска" HorizontalAlignment="Left"/>
+                <TextBox Name="TBPoisk"  Height="30" Width="250" Margin="5,0" HorizontalAlignment="Left" TextChanged="TBPoisk_TextChanged" />
+                <Button  Name="BIzmena" Width="150" Height="30"  Margin="0,5,0,0" Content="Изменить запись" Visibility="Hidden" Click="BIzmena_Click" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Фильтровать:" FontSize="17"/>
+                <ComboBox Name="CBFil" HorizontalAlignment="Center" Height="30" Width="150" SelectionChanged="CBFil_SelectionChanged">
+                    <ComboBoxItem>Остаток возр.</ComboBoxItem>
+                    <ComboBoxItem>Остаток убыв.</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Сортировать:" FontSize="17" Margin="10,0,0,0"/>
+                <ComboBox Name="CBSort" Width="150" Height="30" Margin="5,0,0,0" SelectionChanged="CBSort_SelectionChanged">
+                    <ComboBoxItem>Название возр.</ComboBoxItem>
+                    <ComboBoxItem>Название убыв.</ComboBoxItem>
+                    <ComboBoxItem>Стоимость возр.</ComboBoxItem>
+                    <ComboBoxItem>Стоимость убыв.</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Name="TBVsego" Width="150" Height="30"/>
+                <Button Name="BDobav" Height="30" Width="100" Content=" Добавить" Click="BDobav_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <ListView  Grid.Row="1"  Name="LVList" SelectionMode="Extended" SelectionChanged="LVList_SelectionChanged">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="100" Height="100" Source="{Binding image}" Margin="7,0" VerticalAlignment="Center"></Image>
+                                <StackPanel Margin="0,15">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Name="TBTityl" Text="{Binding MaterialType.Title}"></TextBlock>
+                                        <TextBlock Margin="7,0">|</TextBlock>
+                                        <TextBlock Name="TBMat" Text="{Binding Title}"></TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Name="TBMin" Text="{Binding MinCount, StringFormat={}Минимальное количество: {0} шт}"></TextBlock>
+                                    <TextBlock Width="450" TextWrapping="Wrap" Name="TBSup" Loaded="TBSup_Loaded" Uid="{Binding ID}"></TextBlock>
+                                </StackPanel>
+                                <TextBlock Name="TbLeft" Text="{Binding CountInStock, StringFormat={}Остаток: {0} шт}"></TextBlock>
+                                <Button Name="BRedakt" Click="BRedakt_Click" Content="Редактировать" Margin="0,0,5,0" Height="30" Width="120"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
