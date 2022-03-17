@@ -34,9 +34,9 @@
                 <TextBlock Text="Сттоимость за единицу:" Margin="23,0,0,0"/>
                 <TextBox Name="TBStoimost" Width="120"/>
                 <TextBlock Text="Описание" Margin="70,0,0,0"/>
-                <TextBox Height="60" Width="170"/>
+                <TextBox Name="TBOpis" Height="60" Width="170"/>
                 <Button Name="BDobav" Height="30" Width="120" Margin="10" Content="Добавить" Click="BDobav_Click"/>
-                <Button Name="BRemove" Height="30" Width="120" Content="Удалить"/>
+                <Button Name="BRemove" Height="30" Width="120" Content="Удалить" Click="BRemove_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

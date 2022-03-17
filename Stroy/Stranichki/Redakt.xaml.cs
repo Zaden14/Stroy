@@ -84,7 +84,12 @@ namespace Stroy.Stranichki
             LBTitle.DisplayMemberPath = "Title";
 
         }
-        private void BDobav_Click(object sender, RoutedEventArgs e)
+        private void BDel_Click(object sender, RoutedEventArgs e)
+        {
+            LBTitle.Items.RemoveAt(LBTitle.SelectedIndex);
+        }
+
+        private void BRedakt_Click(object sender, RoutedEventArgs e)
         {
             List<Supplier> sup = DateBase.DB.Supplier.ToList();
             for (int i = 0; i < LBTitle.Items.Count; i++)
@@ -96,11 +101,6 @@ namespace Stroy.Stranichki
                 }
             }
             LBTitle.Items.Add(sup.FirstOrDefault(x => x.ID == CBPost.SelectedIndex + 1));
-        }
-
-        private void BDel_Click(object sender, RoutedEventArgs e)
-        {
-            LBTitle.Items.RemoveAt(LBTitle.SelectedIndex);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -121,7 +121,68 @@ namespace Stroy.Stranichki
             }
         }
 
+        private void BDobav_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MaterialEdit.Title = TBName.Text;
+                MaterialEdit.MaterialTypeID = CBType.SelectedIndex + 1;
+                MaterialEdit.CountInStock = Convert.ToSingle(TBSklad.Text);
+                MaterialEdit.Unit = TBEd.Text;
+                MaterialEdit.CountInPack = Convert.ToInt32(TBUpakovka.Text);
+                MaterialEdit.MinCount = Convert.ToInt32(TBMin.Text);
+                MaterialEdit.Cost = Convert.ToDecimal(TBStoimost.Text);
+                MaterialEdit.Description = TBOpis.Text;
+                MaterialEdit.Image = path;
+                if (IsCreate == true)
+                {
+                    DateBase.DB.Material.Add(MaterialEdit);
+                }
+                DateBase.DB.SaveChanges();
+                List<MaterialSupplier> materialSuppliersOld = MS.Where(x => x.MaterialID == MaterialEdit.ID).ToList();
+                if (materialSuppliersOld.Count != 0)
+                {
+                    foreach (MaterialSupplier ms in materialSuppliersOld)
+                    {
+                        DateBase.DB.MaterialSupplier.Remove(ms);
+                    }
+                }
+                foreach (Supplier t in LBTitle.Items)
+                {
+                    MaterialSupplier ms = new MaterialSupplier();
+                    ms.MaterialID = MaterialEdit.ID;
+                    ms.SupplierID = t.ID;
+                    DateBase.DB.MaterialSupplier.Add(ms);
+                }
+                DateBase.DB.SaveChanges();
+                MessageBox.Show("Данные записаны", "Редактирование", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось записать данные, повторите попытку", "Редактирование", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
+        }
 
+        private void BRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsCreate == true)
+            {
+                MessageBox.Show("Невозможно удалить запись, так как она еще не существует", "Редактирование", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Редактирование", MessageBoxButton.YesNo, MessageBoxImage.Question))
+            {
+                DateBase.DB.Material.Remove(MaterialEdit);
+                DateBase.DB.SaveChanges();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
