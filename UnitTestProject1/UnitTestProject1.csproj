@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WSUniversalLib\WSUniversalLib.csproj">
-      <Project>{b47e6cdf-3867-4cd6-b0af-aa26d1313fbf}</Project>
+      <Project>{79d1ad4f-2628-49f4-a57e-d7d8f602e6c8}</Project>
       <Name>WSUniversalLib</Name>
     </ProjectReference>
   </ItemGroup>

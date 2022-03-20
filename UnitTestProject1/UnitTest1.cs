@@ -42,10 +42,10 @@ namespace UnitTestProject1
         }
 
         [TestMethod()]
-        public void GetQuant_Pord2Mat1_Return1056()
+        public void GetQuant_Pord2Mat1_Return2608()
         {
             //Arrange
-            int productType = 2, materialType = 1, count = 10, expected = 1046;
+            int productType = 2, materialType = 1, count = 10, expected = 2608;
             float width = 13, dlina = 8;
 
             //Act
@@ -60,7 +60,7 @@ namespace UnitTestProject1
         public void GetQuant_Pord1Mat2_Return6399()
         {
             //Arrange
-            int productType = 3, materialType = 2, count = 15, expected = 6399;
+            int productType = 3, materialType = 2, count = 15, expected = 6400;
             float width = 10, dlina = 5;
 
             //Act
@@ -75,7 +75,7 @@ namespace UnitTestProject1
         public void GetQuant_Pord2Mat2_Return608()
         {
             //Arrange
-            int productType = 1, materialType = 1, count = 27, expected = 3217;
+            int productType = 1, materialType = 1, count = 27, expected = 3218;
             float width = 18, dlina = 6;
 
             //Act
@@ -164,7 +164,7 @@ namespace UnitTestProject1
         public void GetQuant_HardBignumbers1_Return2246740()
         {
             //Arrange
-            int productType = 2, materialType = 1, count = 560, expected = 2246740;
+            int productType = 2, materialType = 1, count = 560, expected = 2246741;
             float width = 80, dlina = 20;
 
             //Act
@@ -179,7 +179,7 @@ namespace UnitTestProject1
         public void GetQuant_HardBignumbers2_Return387182()
         {
             //Arrange
-            int productType = 1, materialType = 2, count = 270, expected = 387182;
+            int productType = 1, materialType = 2, count = 270, expected = 387183;
             float width = 23, dlina = 56;
 
             //Act
@@ -189,12 +189,12 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
-
+        //-88
         [TestMethod()]
         public void GetQuant_HardBelowZero1_Return88()
         {
             //Arrange
-            int productType = 1, materialType = 1, count = -4, expected = 88;
+            int productType = 1, materialType = 1, count = 4, expected = -1;
             float width = -2, dlina = 10;
 
             //Act
@@ -204,12 +204,12 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
-
+        //-506
         [TestMethod()]
         public void GetQuant_HardBelowZero2_ReturnError()
         {
             //Arrange
-            int productType = 2, materialType = 2, count = -10, expected = -506;
+            int productType = 2, materialType = 2, count = -10, expected = -1;
             float width = -5, dlina = -4;
 
             //Act
@@ -219,12 +219,12 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
-
+        //0
         [TestMethod()]
         public void GetQuant_HardMoreDecimal_Return0()
         {
             //Arrange
-            int productType = 3, materialType = 1, count = 5, expected = 0;
+            int productType = 3, materialType = 1, count = 5, expected = -1;
             float width = -5, dlina = 0;
 
             //Act
