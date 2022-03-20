@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stroy"
         mc:Ignorable="d"
-        Icon="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\Chernovik.ico"
+        Icon="C:\Users\zaden\OneDrive\Рабочий стол\Новая папка\Stroy\Resources\Chernovik.ico"
         Title="Строй" MinHeight="450" MinWidth="800">
     <Grid>
         <Frame Name="FrmMain" Grid.Row="1" Grid.Column="0"/>

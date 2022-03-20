@@ -166,11 +166,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -178,7 +173,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -199,35 +194,35 @@
   <ItemGroup>
     <None Include="Resources\Chernovik.png" />
     <None Include="Resources\Chernovik.ico" />
-    <None Include="Resources\picture.png" />
+    <None Include="materials\picture.png" />
     <None Include="Resources\Черновик.png" />
     <None Include="Resources\Черновик.ico" />
-    <None Include="Resources\material_22.jpeg" />
-    <None Include="Resources\material_21.jpeg" />
-    <None Include="Resources\material_20.jpeg" />
-    <None Include="Resources\material_19.jpeg" />
-    <None Include="Resources\material_18.jpeg" />
-    <None Include="Resources\material_17.jpeg" />
-    <None Include="Resources\material_16.jpeg" />
-    <None Include="Resources\material_15.jpeg" />
-    <None Include="Resources\material_14.jpeg" />
-    <None Include="Resources\material_13.jpeg" />
-    <None Include="Resources\material_12.jpeg" />
-    <None Include="Resources\material_11.jpeg" />
-    <None Include="Resources\material_10.jpeg" />
-    <None Include="Resources\material_9.jpeg" />
-    <None Include="Resources\material_8.jpeg" />
-    <None Include="Resources\material_7.jpeg" />
-    <None Include="Resources\material_6.jpeg" />
-    <None Include="Resources\material_5.jpeg" />
-    <None Include="Resources\material_4.jpeg" />
-    <None Include="Resources\material_3.jpeg" />
-    <None Include="Resources\material_2.jpeg" />
-    <None Include="Resources\material_1.jpeg" />
-    <None Include="Resources\material_26.png" />
-    <None Include="Resources\material_25.jpeg" />
-    <None Include="Resources\material_24.jpeg" />
-    <None Include="Resources\material_23.jpeg" />
+    <None Include="materials\material_22.jpeg" />
+    <None Include="materials\material_21.jpeg" />
+    <None Include="materials\material_20.jpeg" />
+    <None Include="materials\material_19.jpeg" />
+    <None Include="materials\material_18.jpeg" />
+    <None Include="materials\material_17.jpeg" />
+    <None Include="materials\material_16.jpeg" />
+    <None Include="materials\material_15.jpeg" />
+    <None Include="materials\material_14.jpeg" />
+    <None Include="materials\material_13.jpeg" />
+    <None Include="materials\material_12.jpeg" />
+    <None Include="materials\material_11.jpeg" />
+    <None Include="materials\material_10.jpeg" />
+    <None Include="materials\material_9.jpeg" />
+    <None Include="materials\material_8.jpeg" />
+    <None Include="materials\material_7.jpeg" />
+    <None Include="materials\material_6.jpeg" />
+    <None Include="materials\material_5.jpeg" />
+    <None Include="materials\material_4.jpeg" />
+    <None Include="materials\material_3.jpeg" />
+    <None Include="materials\material_2.jpeg" />
+    <None Include="materials\material_1.jpeg" />
+    <None Include="materials\material_26.png" />
+    <None Include="materials\material_25.jpeg" />
+    <None Include="materials\material_24.jpeg" />
+    <None Include="materials\material_23.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -5,34 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stroy.Stranichki"
         mc:Ignorable="d"
-        Icon="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\Chernovik.ico"
-        Title="Окно редактирования" Height="500" Width="320">
+        Icon="C:\Users\zaden\OneDrive\Рабочий стол\Новая папка\Stroy\Resources\Chernovik.ico"
+        Title="Окно редактирования" Height="600" Width="420">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <Image Name="Image" Margin="5" Source="C:\Users\БуслаевНР\Downloads\Stroy3-master\Stroy\Resources\picture.png" Height="30" Width="80"/>
+                <Image Name="Image" Margin="5" Source="C:\Users\zaden\OneDrive\Рабочий стол\Новая папка\Stroy\materials\picture.png" Height="30" Width="80"/>
                 <Button Margin="0,5,0,0" Content="Изменить фото" Width="100" Click="Button_Click"/>
                 <TextBlock Text="Поставщик" Margin="5,0,0,0"/>
-                <ComboBox Name="CBPost" Margin="5"/>
-                <ListBox Name="LBTitle" Width="100" Height="60"/>
+                <ComboBox Name="CBPost" Width="150" Margin="5"/>
+                <ListBox Name="LBTitle" Width="150" Height="100"/>
                 <Button Content="Изменить запись" Name="BRedakt" Width="100" Margin="5" Click="BRedakt_Click"/>
                 <Button Name="BDel" Content="Удалить запись" Width="100" Click="BDel_Click"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <TextBlock Text="Наименование:" Margin="50,0,0,0"/>
-                <TextBox Name="TBName" Width="120"/>
+                <TextBox Name="TBName" Height="30" Width="120"/>
                 <TextBlock Margin="60,0,0,0" Text="Материал:"/>
-                <ComboBox Name="CBType" Margin="5" Height="20" Width="120"/>
+                <ComboBox Name="CBType" Margin="5" Height="30" Width="150"/>
                 <TextBlock Text="На складе:" Margin="60,0,0,0"/>
-                <TextBox Name="TBSklad" Width="120"/>
+                <TextBox Name="TBSklad" Height="30" Width="150"/>
                 <TextBlock Text="Единица измерения:" Margin="40,0,0,0"/>
-                <TextBox Name="TBEd" Width="120"/>
+                <TextBox Name="TBEd"  Height="30" Width="150"/>
                 <TextBlock Text="Колличество в упаковке:" Margin="20,0,0,0"/>
-                <TextBox Name="TBUpakovka" Width="120"/>
+                <TextBox Name="TBUpakovka" Height="30" Width="150"/>
                 <TextBlock Text="Минимальное колличество:" Margin="20,0,0,0"/>
-                <TextBox Name="TBMin" Width="120"/>
+                <TextBox Name="TBMin" Height="30" Width="150"/>
                 <TextBlock Text="Сттоимость за единицу:" Margin="23,0,0,0"/>
-                <TextBox Name="TBStoimost" Width="120"/>
+                <TextBox Name="TBStoimost" Height="30"  Width="150"/>
                 <TextBlock Text="Описание" Margin="70,0,0,0"/>
                 <TextBox Name="TBOpis" Height="60" Width="170"/>
                 <Button Name="BDobav" Height="30" Width="120" Margin="10" Content="Добавить" Click="BDobav_Click"/>
